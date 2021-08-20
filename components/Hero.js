@@ -1,13 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  useMediaQuery,
-  Button,
-  Flex,
-  Spacer,
-  chakra,
-  Text,
-} from "@chakra-ui/react";
+import { useMediaQuery, Flex, chakra, Text } from "@chakra-ui/react";
 import styles from "../styles/Home.module.css";
 
 export default function Hero() {
