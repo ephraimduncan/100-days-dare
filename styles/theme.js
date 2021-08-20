@@ -2,7 +2,10 @@ import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
   colors: {
-    blue: "#5A06FF",
+    bluee: {
+      100: "#5A06FF",
+      200: "#5A06FF",
+    },
     ash: "#E1D9F2",
     orange: "#FFAC06",
     gray: {
@@ -12,6 +15,10 @@ const theme = extendTheme({
     lime: "#ACFF06",
     black: "#323232",
     pink: "#FF06AC",
+  },
+  fonts: {
+    heading: "Bungee",
+    body: "Bungee",
   },
 });
 
