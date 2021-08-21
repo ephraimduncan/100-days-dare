@@ -1,5 +1,6 @@
 import { Button, Text, useDisclosure } from "@chakra-ui/react";
 import ButtonModal from "./Modal";
+import ModalForm from "./Form";
 
 export default function DayButton({ day, disabled }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -11,8 +12,6 @@ export default function DayButton({ day, disabled }) {
         m={2}
         p={1}
         borderRadius="25"
-        fontFamily="bungee"
-        fontWeight="light"
         bg={disabled ? "white" : "gray.200"}
         size="lg"
         cursor={disabled ? "default" : "pointer"}
@@ -21,7 +20,12 @@ export default function DayButton({ day, disabled }) {
         onClick={onOpen}
       >
         {!disabled && (
-          <Text color="#5a06ff" fontSize="xl">
+          <Text
+            fontFamily="bungee"
+            fontWeight="light"
+            color="#5a06ff"
+            fontSize="xl"
+          >
             {day}
           </Text>
         )}
@@ -31,7 +35,7 @@ export default function DayButton({ day, disabled }) {
           isOpen={isOpen}
           onClose={onClose}
           day={day}
-          body={`Hello, welcome to day ${day}`}
+          body={<ModalForm />}
         />
       )}
     </>
