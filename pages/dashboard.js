@@ -36,7 +36,6 @@ export default withPageAuthRequired(function Dashboard() {
           <Spacer />
           <Spacer />
           <Spacer />
-
           <chakra.div>
             <Image
               src="/motivation.svg"

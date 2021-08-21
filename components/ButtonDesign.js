@@ -11,127 +11,60 @@ const App = () => (
           <DayButton day="1" />
           <DayButton day="1" />
           <DayButton day="1" />
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
         </Flex>
         <Flex>
           <DayButton day="1" />
           <DayButton day="1" />
           <DayButton day="1" />
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
         </Flex>
         <Flex>
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
           <DayButton day="1" />
           <DayButton day="1" />
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
         </Flex>
         <Flex>
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
           <DayButton day="1" />
           <DayButton day="1" />
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
         </Flex>
         <Flex>
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
           <DayButton day="1" />
           <DayButton day="1" />
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
         </Flex>
         <Flex>
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
           <DayButton day="1" />
           <DayButton day="1" />
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
         </Flex>
         <Flex>
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
           <DayButton day="1" />
           <DayButton day="1" />
-          <DayButton day="2" />
-        </Flex>
-        <Flex>
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-        </Flex>
-      </Flex>
-      <Spacer />
-      <Flex flexDirection="column" m={5}>
-        <Flex>
-          <DayButton day="2" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
         </Flex>
         <Flex>
           <DayButton day="1" />
           <DayButton day="1" />
           <DayButton day="1" />
           <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-        </Flex>
-        <Flex>
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-        </Flex>
-        <Flex>
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="2" />
-          <DayButton day="2" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-        </Flex>
-        <Flex>
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="2" />
-          <DayButton day="2" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-        </Flex>
-        <Flex>
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-        </Flex>
-        <Flex>
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-        </Flex>
-        <Flex>
-          <DayButton day="2" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="2" />
         </Flex>
       </Flex>
       <Spacer />
       <Flex flexDirection="column" m={5}>
         <Flex>
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
           <DayButton day="1" />
           <DayButton day="1" />
           <DayButton day="1" />
           <DayButton day="1" />
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
         </Flex>
         <Flex>
           <DayButton day="1" />
@@ -152,24 +85,16 @@ const App = () => (
         <Flex>
           <DayButton day="1" />
           <DayButton day="1" />
-          <DayButton day="2" />
-          <DayButton day="2" />
+          <DayButton day="2" disabled />
+          <DayButton day="2" disabled />
           <DayButton day="1" />
           <DayButton day="1" />
         </Flex>
         <Flex>
           <DayButton day="1" />
           <DayButton day="1" />
-          <DayButton day="2" />
-          <DayButton day="2" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-        </Flex>
-        <Flex>
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
-          <DayButton day="1" />
+          <DayButton day="2" disabled />
+          <DayButton day="2" disabled />
           <DayButton day="1" />
           <DayButton day="1" />
         </Flex>
@@ -182,12 +107,87 @@ const App = () => (
           <DayButton day="1" />
         </Flex>
         <Flex>
-          <DayButton day="2" />
           <DayButton day="1" />
           <DayButton day="1" />
           <DayButton day="1" />
           <DayButton day="1" />
-          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+        </Flex>
+        <Flex>
+          <DayButton day="2" disabled />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" disabled />
+        </Flex>
+      </Flex>
+      <Spacer />
+      <Flex flexDirection="column" m={5}>
+        <Flex>
+          <DayButton day="2" disabled />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" disabled />
+        </Flex>
+        <Flex>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+        </Flex>
+        <Flex>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+        </Flex>
+        <Flex>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" disabled />
+          <DayButton day="2" disabled />
+          <DayButton day="1" />
+          <DayButton day="1" />
+        </Flex>
+        <Flex>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" disabled />
+          <DayButton day="2" disabled />
+          <DayButton day="1" />
+          <DayButton day="1" />
+        </Flex>
+        <Flex>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+        </Flex>
+        <Flex>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+        </Flex>
+        <Flex>
+          <DayButton day="2" disabled />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" disabled />
         </Flex>
       </Flex>
       <Spacer />
