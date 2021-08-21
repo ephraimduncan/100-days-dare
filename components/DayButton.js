@@ -27,7 +27,12 @@ export default function DayButton({ day, disabled }) {
         )}
       </Button>
       {!disabled && (
-        <ButtonModal isOpen={isOpen} onClose={onClose} day={day} />
+        <ButtonModal
+          isOpen={isOpen}
+          onClose={onClose}
+          day={day}
+          body={`Hello, welcome to day ${day}`}
+        />
       )}
     </>
   );

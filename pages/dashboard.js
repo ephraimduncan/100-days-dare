@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Flex, Text, Box, chakra, Spacer } from "@chakra-ui/react";
+import { Flex, Text, chakra, Spacer } from "@chakra-ui/react";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import ButtonDesign from "../components/ButtonDesign";
 import Layout from "../components/Layout";

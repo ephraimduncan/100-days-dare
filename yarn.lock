@@ -906,6 +906,11 @@
     prop-types "^15.7.2"
     tslib "^2.1.0"
 
+"@rooks/use-localstorage@^4.11.2":
+  version "4.11.2"
+  resolved "https://registry.yarnpkg.com/@rooks/use-localstorage/-/use-localstorage-4.11.2.tgz#acf92678cada78d834a3434f7b7070e487ebfc19"
+  integrity sha512-m+/FGnmeA8MjZ00yW2XmVj4aUMCikra4N9yCCQynOZEyf6ThpgUWUDRK5afxqyIqrprDK5jkLjsVE6r1XJM9Fw==
+
 "@rooks/use-window-size@^4.11.2":
   version "4.11.2"
   resolved "https://registry.yarnpkg.com/@rooks/use-window-size/-/use-window-size-4.11.2.tgz#1b136c2c1fdbb4a2a560cd53c432ef1299c09718"

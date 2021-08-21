@@ -10,7 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-export default function ButtonModal({ isOpen, onClose, day }) {
+export default function ButtonModal({ isOpen, onClose, day, body }) {
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -22,7 +22,7 @@ export default function ButtonModal({ isOpen, onClose, day }) {
             </Text>
           </ModalHeader>
           <ModalCloseButton />
-          <ModalBody>Hello</ModalBody>
+          <ModalBody>{body}</ModalBody>
 
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
