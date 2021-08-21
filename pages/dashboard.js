@@ -56,7 +56,11 @@ export default withPageAuthRequired(function Dashboard() {
             <ButtonModal
               isOpen={isOpen}
               onClose={onClose}
-              body={`Are you sure you want to logout?`}
+              body={
+                <Text textAlign="center" fontSize="xl">
+                  Are you sure you want to logout?
+                </Text>
+              }
             />
           </chakra.div>
           <Spacer />

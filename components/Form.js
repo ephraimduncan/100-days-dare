@@ -3,7 +3,6 @@ import {
   FormControl,
   FormLabel,
   Input,
-  FormErrorMessage,
   FormHelperText,
   Textarea,
   Button,
@@ -18,13 +17,11 @@ export default function ModalForm() {
         <FormLabel>What did you do today?</FormLabel>
         <Input />
         <FormHelperText>Short description.</FormHelperText>
-        <FormErrorMessage>Error message</FormErrorMessage>
       </FormControl>
       <FormControl m={2}>
         <FormLabel>Detail your task today?</FormLabel>
         <Textarea />
         <FormHelperText>Detailed description</FormHelperText>
-        <FormErrorMessage>Error message</FormErrorMessage>
       </FormControl>
       <Box marginBottom={2} textAlign="right">
         <Button type="submit">

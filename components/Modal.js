@@ -8,7 +8,9 @@ import {
   ModalCloseButton,
   Button,
   Text,
+  chakra,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 export default function ButtonModal({ isOpen, onClose, day, body }) {
   return (
@@ -39,7 +41,19 @@ export default function ButtonModal({ isOpen, onClose, day, body }) {
           <ModalBody>{body}</ModalBody>
           {!day && (
             <ModalFooter>
-              <Button>Logout</Button>
+              <Button>
+                <Link href="/api/auth/logout">
+                  <chakra.a>
+                    <Text
+                      fontFamily="bungee"
+                      fontWeight="light"
+                      color="#5a06ff"
+                    >
+                      Logout
+                    </Text>
+                  </chakra.a>
+                </Link>
+              </Button>
             </ModalFooter>
           )}
         </ModalContent>
