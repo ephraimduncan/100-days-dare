@@ -9,6 +9,7 @@ export default withPageAuthRequired(function Dashboard() {
     <Layout>
       <chakra.div p={4}>
         <Flex direction="row">
+          <Spacer />
           <Flex direction="row">
             <Flex direction="column" mb="8">
               <Text fontSize="4xl" fontFamily="bungee">
@@ -30,6 +31,12 @@ export default withPageAuthRequired(function Dashboard() {
             </Flex>
           </Flex>
           <Spacer />
+          <Spacer />
+          <Spacer />
+          <Spacer />
+          <Spacer />
+          <Spacer />
+
           <chakra.div>
             <Image
               src="/motivation.svg"
@@ -39,6 +46,7 @@ export default withPageAuthRequired(function Dashboard() {
               size="108.5px"
             />
           </chakra.div>
+          <Spacer />
         </Flex>
         {/* Main 100 Designs */}
         <chakra.div>
