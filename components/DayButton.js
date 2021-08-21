@@ -12,6 +12,7 @@ export default function DayButton({ day, disabled }) {
         p={1}
         borderRadius="25"
         fontFamily="bungee"
+        fontWeight="light"
         bg={disabled ? "white" : "gray.200"}
         size="lg"
         cursor={disabled ? "default" : "pointer"}
@@ -25,7 +26,9 @@ export default function DayButton({ day, disabled }) {
           </Text>
         )}
       </Button>
-      <ButtonModal isOpen={isOpen} onClose={onClose} day={day} />
+      {!disabled && (
+        <ButtonModal isOpen={isOpen} onClose={onClose} day={day} />
+      )}
     </>
   );
 }

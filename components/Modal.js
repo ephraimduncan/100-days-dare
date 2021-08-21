@@ -7,7 +7,7 @@ import {
   ModalBody,
   ModalCloseButton,
   Button,
-  useDisclosure,
+  Text,
 } from "@chakra-ui/react";
 
 export default function ButtonModal({ isOpen, onClose, day }) {
@@ -16,7 +16,11 @@ export default function ButtonModal({ isOpen, onClose, day }) {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Day {day}</ModalHeader>
+          <ModalHeader>
+            <Text fontFamily="bungee" fontWeight="light">
+              Day {day}
+            </Text>
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody>Hello</ModalBody>
 
