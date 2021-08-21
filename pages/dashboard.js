@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Flex, Text, Box, chakra, Spacer } from "@chakra-ui/react";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import ButtonDesign from "../components/ButtonDesign";
 import Layout from "../components/Layout";
 
 export default withPageAuthRequired(function Dashboard() {
@@ -40,7 +41,9 @@ export default withPageAuthRequired(function Dashboard() {
           </chakra.div>
         </Flex>
         {/* Main 100 Designs */}
-        <chakra.div>100 Design Here</chakra.div>
+        <chakra.div>
+          <ButtonDesign />
+        </chakra.div>
       </chakra.div>
     </Layout>
   );
