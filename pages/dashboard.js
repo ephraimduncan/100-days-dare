@@ -1,10 +1,19 @@
 import Image from "next/image";
-import { Flex, Text, chakra, Spacer } from "@chakra-ui/react";
+import {
+  Flex,
+  Text,
+  chakra,
+  Spacer,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import ButtonDesign from "../components/ButtonDesign";
 import Layout from "../components/Layout";
+import ButtonModal from "../components/Modal";
 
 export default withPageAuthRequired(function Dashboard() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Layout>
       <chakra.div p={4}>
@@ -36,13 +45,18 @@ export default withPageAuthRequired(function Dashboard() {
           <Spacer />
           <Spacer />
           <Spacer />
-          <chakra.div>
+          <chakra.div onClick={onOpen}>
             <Image
               src="/motivation.svg"
               alt="Daily Motivation"
               width="394"
               height="108.5"
               size="108.5px"
+            />
+            <ButtonModal
+              isOpen={isOpen}
+              onClose={onClose}
+              body={`Are you sure you want to logout?`}
             />
           </chakra.div>
           <Spacer />

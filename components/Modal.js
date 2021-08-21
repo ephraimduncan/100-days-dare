@@ -17,9 +17,15 @@ export default function ButtonModal({ isOpen, onClose, day, body }) {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            <Text fontFamily="bungee" fontWeight="light">
-              Day {day}
-            </Text>
+            {day ? (
+              <Text fontFamily="bungee" fontWeight="light">
+                Day {day}
+              </Text>
+            ) : (
+              <Text fontFamily="bungee" fontWeight="light">
+                Logout
+              </Text>
+            )}
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>{body}</ModalBody>
