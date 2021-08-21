@@ -1,22 +1,31 @@
-import { Button, Text } from "@chakra-ui/react";
+import { Button, Text, useDisclosure } from "@chakra-ui/react";
+import ButtonModal from "./Modal";
 
 export default function DayButton({ day, disabled }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // TODO: Fix Outline for Disabled Icons when clicked
   return (
-    <Button
-      m={2}
-      p={1}
-      borderRadius="25"
-      fontFamily="bungee"
-      bg={disabled ? "white" : "gray.200"}
-      size="lg"
-      cursor={disabled ? "default" : "pointer"}
-      _hover={{ bg: disabled && "whiteAlpha.100" }}
-    >
-      {!disabled && (
-        <Text color="#5a06ff" fontSize="xl">
-          {day}
-        </Text>
-      )}
-    </Button>
+    <>
+      <Button
+        m={2}
+        p={1}
+        borderRadius="25"
+        fontFamily="bungee"
+        bg={disabled ? "white" : "gray.200"}
+        size="lg"
+        cursor={disabled ? "default" : "pointer"}
+        _hover={{ bg: disabled && "whiteAlpha.100" }}
+        // Modal
+        onClick={onOpen}
+      >
+        {!disabled && (
+          <Text color="#5a06ff" fontSize="xl">
+            {day}
+          </Text>
+        )}
+      </Button>
+      <ButtonModal isOpen={isOpen} onClose={onClose} day={day} />
+    </>
   );
 }
