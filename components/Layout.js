@@ -6,11 +6,9 @@ import styles from "../styles/Home.module.css";
 export default function Layout({ children }) {
   return (
     <>
-      <Container maxW="container.xl">
-        <Header />
-        <main className={styles.main}>{children}</main>
-        <Footer />
-      </Container>
+      <Header />
+      <main className={styles.main}>{children}</main>
+      <Footer />
     </>
   );
 }

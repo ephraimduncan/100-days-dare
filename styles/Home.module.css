@@ -15,11 +15,6 @@
 
 .main {
   min-height: 89vh;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .footer {
@@ -116,4 +111,25 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.buttonDesign {
+  background: #e8e2f3;
+
+  font-family: Bungee;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  /* #5A06FF */
+  color: #5a06ff;
+
+  /* Vector */
+
+  position: absolute;
+  visibility: hidden;
+  left: 16.67%;
+  right: 17.71%;
+  top: 25%;
+  bottom: 25%;
 }

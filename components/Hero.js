@@ -31,8 +31,9 @@ export default function Hero() {
         flexDirection={!is500px ? "row" : "column"}
         justifyContent="center"
         alignItems="center"
+        cursor="pointer"
       >
-        <Link href="/">
+        <Link href="/dashboard">
           <chakra.a
             m={[2, 3]}
             p={[4, 6]}
@@ -41,6 +42,7 @@ export default function Hero() {
           >
             <Text
               bgGradient="linear(to-l, #5A06FF,#0070f3)"
+              fontFamily="bungee"
               bgClip="text"
               fontSize={!is500px ? "4xl" : "2xl"}
             >
@@ -48,7 +50,7 @@ export default function Hero() {
             </Text>
           </chakra.a>
         </Link>
-        <Link href="/">
+        <Link href="/dashboard">
           <chakra.a
             m={[2, 3]}
             p={[4, 6]}
@@ -57,6 +59,7 @@ export default function Hero() {
           >
             <Text
               bgGradient="linear(to-l, #5A06FF,#0070f3)"
+              fontFamily="bungee"
               bgClip="text"
               fontSize={!is500px ? "4xl" : "2xl"}
             >
