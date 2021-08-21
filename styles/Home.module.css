@@ -114,22 +114,16 @@
 }
 
 .buttonDesign {
-  background: #e8e2f3;
+  /* Ellipse Color */
+  background: #ece7f5;
 
+  /* 1 */
   font-family: Bungee;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
   line-height: 24px;
+
   /* #5A06FF */
   color: #5a06ff;
-
-  /* Vector */
-
-  position: absolute;
-  visibility: hidden;
-  left: 16.67%;
-  right: 17.71%;
-  top: 25%;
-  bottom: 25%;
 }

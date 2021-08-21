@@ -1,447 +1,196 @@
 import React from "react";
-import { ChakraProvider, Flex, Button } from "@chakra-ui/react";
+import { ChakraProvider, Flex, Spacer } from "@chakra-ui/react";
+import DayButton from "./DayButton";
 
 const App = () => (
   <ChakraProvider resetCSS>
     <Flex>
+      <Spacer />
       <Flex flexDirection="column" m={5}>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            2
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            2
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md">
-            2
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            2
-          </Button>
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md">
-            2
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            2
-          </Button>
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md">
-            2
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            2
-          </Button>
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md">
-            2
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            2
-          </Button>
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md">
-            2
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            2
-          </Button>
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
       </Flex>
+      <Spacer />
       <Flex flexDirection="column" m={5}>
         <Flex>
-          <Button variant="solid" size="md">
-            2
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            2
-          </Button>
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md">
-            2
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            2
-          </Button>
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
         </Flex>
       </Flex>
+      <Spacer />
       <Flex flexDirection="column" m={5}>
         <Flex>
-          <Button variant="solid" size="md">
-            2
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            2
-          </Button>
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
         </Flex>
         <Flex>
-          <Button variant="solid" size="md">
-            2
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md" colorScheme="red">
-            1
-          </Button>
-          <Button variant="solid" size="md">
-            2
-          </Button>
+          <DayButton day="2" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="1" />
+          <DayButton day="2" />
         </Flex>
       </Flex>
+      <Spacer />
     </Flex>
   </ChakraProvider>
 );
