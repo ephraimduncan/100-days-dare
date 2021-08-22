@@ -7,7 +7,11 @@ import {
 import ButtonModal from "./Modal";
 import GoalForm from "./GoalForm";
 
-export default function PopoverModal({ title, message }) {
+export default function PopoverModal({
+  title,
+  message,
+  userForGoalForm,
+}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -22,7 +26,14 @@ export default function PopoverModal({ title, message }) {
             textAlign={title !== "Set Goal" && "center"}
             fontSize="xl"
           >
-            {message ? message : <GoalForm onClose={onClose} />}
+            {message ? (
+              message
+            ) : (
+              <GoalForm
+                onClose={onClose}
+                userForGoalForm={userForGoalForm}
+              />
+            )}
           </Text>
         }
       />

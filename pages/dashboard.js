@@ -74,6 +74,7 @@ export default withPageAuthRequired(function Dashboard() {
               username={data.user.username}
               name={data.user.name}
               url={data.user.avatar}
+              userForGoalForm={data.user}
             />
           ) : (
             <Avatar m={2} name="" avatar="" />

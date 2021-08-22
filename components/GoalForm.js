@@ -13,12 +13,17 @@ import {
 import { useForm } from "react-hook-form";
 import Router from "next/router";
 
-export default function GoalForm({ onClose }) {
+export default function GoalForm({ onClose, userForGoalForm }) {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      goal: userForGoalForm ? userForGoalForm.goal : "",
+      dailyHabit: userForGoalForm ? userForGoalForm.dailyHabit : "",
+    },
+  });
 
   const onSubmit = async (data) => {
     onClose();

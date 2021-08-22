@@ -3,23 +3,22 @@ import {
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
-  PopoverBody,
   PopoverArrow,
   PopoverCloseButton,
   chakra,
   Avatar,
-  useDisclosure,
-  Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import ButtonModal from "../components/Modal";
-import GoalForm from "./GoalForm";
 import PopoverModal from "./PopoverModal";
 
-export default function UserPopover({ name, username, url }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+export default function UserPopover({
+  name,
+  username,
+  url,
+  userForGoalForm,
+}) {
   const [popoverIsOpen, setIsOpen] = useState(false);
-  const open = () => setIsOpen(!isOpen);
+  const open = () => setIsOpen(!popoverIsOpen);
   const close = () => setIsOpen(false);
   return (
     <>
@@ -42,7 +41,10 @@ export default function UserPopover({ name, username, url }) {
           </PopoverHeader>
           <PopoverArrow />
           <PopoverCloseButton />
-          <PopoverModal title="Set Goal" />
+          <PopoverModal
+            title="Set Goal"
+            userForGoalForm={userForGoalForm}
+          />
           <PopoverModal
             title="Reset"
             message="Are you sure you want to reset?"
