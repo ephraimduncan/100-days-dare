@@ -10,9 +10,13 @@ import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import ButtonDesign from "../components/ButtonDesign";
 import Layout from "../components/Layout";
 import ButtonModal from "../components/Modal";
+import useLocalstorage from "@rooks/use-localstorage";
 
 export default withPageAuthRequired(function Dashboard() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { value } = useLocalstorage("userId", 0);
+
+  console.log("local storage", value);
 
   return (
     <Layout>

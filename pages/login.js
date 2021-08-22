@@ -1,13 +1,15 @@
 import { Center, Text } from "@chakra-ui/react";
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
+import useLocalstorage from "@rooks/use-localstorage";
 
 export default function Login() {
   const { user } = useUser();
+  const router = useRouter();
+  const { set } = useLocalstorage("userId", 0);
 
   const createUser = async (user) => {
-    console.log("user", user);
-
     if (user) {
       const userData = {
         name: user.name,
@@ -28,7 +30,9 @@ export default function Login() {
         },
       });
 
-      console.log(await userDetails.json());
+      const { data } = await userDetails.json();
+      set(data.userId);
+      router.push("/dashboard");
     }
   };
 

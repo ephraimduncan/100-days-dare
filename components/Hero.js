@@ -50,7 +50,7 @@ export default function Hero() {
             </Text>
           </chakra.a>
         </Link>
-        <Link href="/dashboard">
+        <Link href="/login">
           <chakra.a
             m={[2, 3]}
             p={[4, 6]}
