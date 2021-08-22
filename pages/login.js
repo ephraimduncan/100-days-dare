@@ -7,7 +7,6 @@ import useLocalstorage from "@rooks/use-localstorage";
 export default function Login() {
   const { user } = useUser();
   const router = useRouter();
-  const { set } = useLocalstorage("userId", 0);
 
   const createUser = async (user) => {
     if (user) {
@@ -18,11 +17,11 @@ export default function Login() {
         userId: user.sub,
         goal: "",
         dailyHabit: "",
-        currentDay: 0,
+        currentDay: 1,
         days: [],
       };
 
-      const userDetails = await fetch("/api/createUser", {
+      await fetch("/api/createUser", {
         method: "POST",
         body: JSON.stringify(userData),
         headers: {
@@ -30,8 +29,6 @@ export default function Login() {
         },
       });
 
-      const { data } = await userDetails.json();
-      set(data.userId);
       router.push("/dashboard");
     }
   };

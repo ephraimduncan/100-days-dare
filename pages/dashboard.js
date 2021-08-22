@@ -7,16 +7,28 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import useSWR from "swr";
 import ButtonDesign from "../components/ButtonDesign";
 import Layout from "../components/Layout";
 import ButtonModal from "../components/Modal";
-import useLocalstorage from "@rooks/use-localstorage";
 
 export default withPageAuthRequired(function Dashboard() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { value } = useLocalstorage("userId", 0);
+  const { data, error } = useSWR("/api/getUser");
 
-  console.log("local storage", value);
+  if (data) {
+    const { user } = data;
+
+    console.log(user);
+
+    // Day
+    if (user.currentDay === 1) {
+      console.log("Welcome");
+      setNewUser(true);
+      onOpen();
+      user.currentDay++;
+    }
+  }
 
   return (
     <Layout>
@@ -60,6 +72,7 @@ export default withPageAuthRequired(function Dashboard() {
             <ButtonModal
               isOpen={isOpen}
               onClose={onClose}
+              title="Logout"
               body={
                 <Text textAlign="center" fontSize="xl">
                   Are you sure you want to logout?
@@ -67,6 +80,18 @@ export default withPageAuthRequired(function Dashboard() {
               }
             />
           </chakra.div>
+          {newUser && (
+            <ButtonModal
+              isOpen={isOpen}
+              onClose={onClose}
+              title="Welcome"
+              body={
+                <Text textAlign="center" fontSize="xl">
+                  Welcome To The 100 Days Challenge
+                </Text>
+              }
+            />
+          )}
           <Spacer />
         </Flex>
         {/* Main 100 Designs */}

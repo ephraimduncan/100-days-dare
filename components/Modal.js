@@ -12,34 +12,30 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 
-export default function ButtonModal({ isOpen, onClose, day, body }) {
+export default function ButtonModal({
+  isOpen,
+  onClose,
+  day,
+  title,
+  body,
+}) {
   return (
     <>
       <Modal p={2} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            {day ? (
-              <Text
-                fontFamily="bungee"
-                fontSize="2xl"
-                fontWeight="light"
-              >
-                Day {day}
-              </Text>
-            ) : (
-              <Text
-                fontFamily="bungee"
-                fontSize="xl"
-                fontWeight="light"
-              >
-                Logout
-              </Text>
-            )}
+            <Text
+              fontFamily="bungee"
+              fontSize="xl"
+              fontWeight="light"
+            >
+              {title}
+            </Text>
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>{body}</ModalBody>
-          {!day && (
+          {title === "Logout" && (
             <ModalFooter>
               <Button>
                 <Link href="/api/auth/logout">

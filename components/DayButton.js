@@ -35,6 +35,7 @@ export default function DayButton({ day, disabled }) {
           isOpen={isOpen}
           onClose={onClose}
           day={day}
+          title={`Day ${day}`}
           body={<ModalForm />}
         />
       )}
