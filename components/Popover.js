@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import ButtonModal from "../components/Modal";
+import GoalForm from "./GoalForm";
 import PopoverModal from "./PopoverModal";
 
 export default function UserPopover({ name, username, url }) {
@@ -41,10 +42,7 @@ export default function UserPopover({ name, username, url }) {
           </PopoverHeader>
           <PopoverArrow />
           <PopoverCloseButton />
-          <PopoverModal
-            title="Set Goal"
-            message="Set Your Goal Here"
-          />
+          <PopoverModal title="Set Goal" message={<GoalForm />} />
           <PopoverModal
             title="Reset"
             message="Are you sure you want to reset?"

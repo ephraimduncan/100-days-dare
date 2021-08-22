@@ -10,18 +10,20 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-export default function ModalForm() {
+export default function GoalForm() {
   return (
     <>
       <FormControl m={2}>
-        <FormLabel>What did you do today?</FormLabel>
+        <FormLabel>Goal</FormLabel>
         <Input />
-        <FormHelperText>Short description.</FormHelperText>
+        <FormHelperText>
+          Your goal at the end of 100 days
+        </FormHelperText>
       </FormControl>
       <FormControl m={2} mt={4}>
-        <FormLabel>Detail your task today?</FormLabel>
+        <FormLabel>Daily Habit</FormLabel>
         <Textarea />
-        <FormHelperText>Detailed description</FormHelperText>
+        <FormHelperText>Your habit daily</FormHelperText>
       </FormControl>
       <Box textAlign="right">
         <Button type="submit">

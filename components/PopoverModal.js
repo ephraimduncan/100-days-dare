@@ -17,7 +17,10 @@ export default function PopoverModal({ title, message }) {
         onClose={onClose}
         title={title}
         body={
-          <Text textAlign="center" fontSize="xl">
+          <Text
+            textAlign={title !== "Set Goal" && "center"}
+            fontSize="xl"
+          >
             {message}
           </Text>
         }

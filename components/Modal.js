@@ -38,9 +38,6 @@ export default function ButtonModal({
             </chakra.a>
           </Link>
         );
-
-      default:
-        <PopoverButton title={title} />;
     }
   };
 
@@ -60,7 +57,6 @@ export default function ButtonModal({
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>{body}</ModalBody>
-
           <ModalFooter>{renderSwitch(title)}</ModalFooter>
         </ModalContent>
       </Modal>
