@@ -1,20 +1,12 @@
 import Image from "next/image";
-import {
-  Flex,
-  Text,
-  chakra,
-  Spacer,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Flex, Text, chakra, Spacer, Avatar } from "@chakra-ui/react";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import useSWR from "swr";
 import ButtonDesign from "../components/ButtonDesign";
 import Layout from "../components/Layout";
-import ButtonModal from "../components/Modal";
-import Avatar from "../components/Avatar";
+import Popover from "../components/Popover";
 
 export default withPageAuthRequired(function Dashboard() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const { data, error } = useSWR("/api/getUser");
 
   if (data) {
@@ -31,7 +23,7 @@ export default withPageAuthRequired(function Dashboard() {
 
   return (
     <Layout>
-      <chakra.div p={4}>
+      <chakra.div mt={6} p={4}>
         <Flex direction="row">
           <Spacer />
           <Flex direction="row">
@@ -63,7 +55,7 @@ export default withPageAuthRequired(function Dashboard() {
           <Spacer />
           <Spacer />
           <Spacer />
-          <chakra.div onClick={onOpen}>
+          <chakra.div>
             <Image
               src="/motivation.svg"
               alt="Daily Motivation"
@@ -71,22 +63,16 @@ export default withPageAuthRequired(function Dashboard() {
               height="108.5"
               size="108.5px"
             />
-            <ButtonModal
-              isOpen={isOpen}
-              onClose={onClose}
-              title="Logout"
-              body={
-                <Text textAlign="center" fontSize="xl">
-                  Are you sure you want to logout?
-                </Text>
-              }
-            />
           </chakra.div>
           <Spacer />
           {data ? (
-            <Avatar name={data.user.name} url={data.user.avatar} />
+            <Popover
+              username={data.user.username}
+              name={data.user.name}
+              url={data.user.avatar}
+            />
           ) : (
-            <Avatar name="" url="" />
+            <Avatar m={2} name="" avatar="" />
           )}
           <Spacer />
         </Flex>
