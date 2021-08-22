@@ -2,7 +2,6 @@ import { Center, Text } from "@chakra-ui/react";
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import useLocalstorage from "@rooks/use-localstorage";
 
 export default function Login() {
   const { user } = useUser();

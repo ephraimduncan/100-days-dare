@@ -11,6 +11,7 @@ import useSWR from "swr";
 import ButtonDesign from "../components/ButtonDesign";
 import Layout from "../components/Layout";
 import ButtonModal from "../components/Modal";
+import Avatar from "../components/Avatar";
 
 export default withPageAuthRequired(function Dashboard() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -24,8 +25,6 @@ export default withPageAuthRequired(function Dashboard() {
     // Day
     if (user.currentDay === 1) {
       console.log("Welcome");
-      setNewUser(true);
-      onOpen();
       user.currentDay++;
     }
   }
@@ -61,6 +60,9 @@ export default withPageAuthRequired(function Dashboard() {
           <Spacer />
           <Spacer />
           <Spacer />
+          <Spacer />
+          <Spacer />
+          <Spacer />
           <chakra.div onClick={onOpen}>
             <Image
               src="/motivation.svg"
@@ -80,17 +82,11 @@ export default withPageAuthRequired(function Dashboard() {
               }
             />
           </chakra.div>
-          {newUser && (
-            <ButtonModal
-              isOpen={isOpen}
-              onClose={onClose}
-              title="Welcome"
-              body={
-                <Text textAlign="center" fontSize="xl">
-                  Welcome To The 100 Days Challenge
-                </Text>
-              }
-            />
+          <Spacer />
+          {data ? (
+            <Avatar name={data.user.name} url={data.user.avatar} />
+          ) : (
+            <Avatar name="" url="" />
           )}
           <Spacer />
         </Flex>
