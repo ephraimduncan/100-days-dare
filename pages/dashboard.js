@@ -9,17 +9,17 @@ import Popover from "../components/Popover";
 export default withPageAuthRequired(function Dashboard() {
   const { data, error } = useSWR("/api/getUser");
 
-  if (data) {
-    const { user } = data;
+  // if (data) {
+  //   const { user } = data;
 
-    console.log(user);
+  //   console.log(user);
 
-    // Day
-    if (user.currentDay === 1) {
-      console.log("Welcome");
-      user.currentDay++;
-    }
-  }
+  //   // Day
+  //   if (user.currentDay === 1) {
+  //     console.log("Welcome");
+  //     user.currentDay++;
+  //   }
+  // }
 
   return (
     <Layout>
@@ -74,7 +74,6 @@ export default withPageAuthRequired(function Dashboard() {
               username={data.user.username}
               name={data.user.name}
               url={data.user.avatar}
-              userForGoalForm={data.user}
             />
           ) : (
             <Avatar m={2} name="" avatar="" />

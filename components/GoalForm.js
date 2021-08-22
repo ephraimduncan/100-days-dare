@@ -12,16 +12,19 @@ import {
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import Router from "next/router";
+import useSWR from "swr";
 
-export default function GoalForm({ onClose, userForGoalForm }) {
+export default function GoalForm({ onClose }) {
+  const { data, error } = useSWR("/api/getUser");
+
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      goal: userForGoalForm ? userForGoalForm.goal : "",
-      dailyHabit: userForGoalForm ? userForGoalForm.dailyHabit : "",
+      goal: data ? data.user.goal : "",
+      dailyHabit: data ? data.user.dailyHabit : "",
     },
   });
 

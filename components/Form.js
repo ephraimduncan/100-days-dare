@@ -11,13 +11,28 @@ import {
   chakra,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
+import useSWR from "swr";
 
 export default function ModalForm({ onClose, day }) {
+  const { data, error } = useSWR("/api/getUser");
+
+  const userDaysActivity = data.user.days;
+  const selectedDay = userDaysActivity.find((element) => {
+    return parseInt(Object.keys(element)[0]) === parseInt(day);
+  });
+
+  console.log(selectedDay);
+
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      taskToday: selectedDay ? selectedDay[day].taskToday : "",
+      details: selectedDay ? selectedDay[day].details : "",
+    },
+  });
 
   const submitForm = async ({ taskToday, details }) => {
     const completedData = {
@@ -30,6 +45,8 @@ export default function ModalForm({ onClose, day }) {
       [day]: completedData,
     };
 
+    onClose();
+
     const userDay = await fetch("/api/addUserDay", {
       method: "POST",
       body: JSON.stringify(userDayData),
@@ -37,9 +54,6 @@ export default function ModalForm({ onClose, day }) {
         "Content-Type": "application/json",
       },
     });
-
-    console.log(await userDay.json());
-    onClose();
   };
 
   return (

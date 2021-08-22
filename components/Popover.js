@@ -11,12 +11,7 @@ import {
 import { useState } from "react";
 import PopoverModal from "./PopoverModal";
 
-export default function UserPopover({
-  name,
-  username,
-  url,
-  userForGoalForm,
-}) {
+export default function UserPopover({ name, username, url }) {
   const [popoverIsOpen, setIsOpen] = useState(false);
   const open = () => setIsOpen(!popoverIsOpen);
   const close = () => setIsOpen(false);
@@ -41,10 +36,7 @@ export default function UserPopover({
           </PopoverHeader>
           <PopoverArrow />
           <PopoverCloseButton />
-          <PopoverModal
-            title="Set Goal"
-            userForGoalForm={userForGoalForm}
-          />
+          <PopoverModal title="Set Goal" />
           <PopoverModal
             title="Reset"
             message="Are you sure you want to reset?"

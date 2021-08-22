@@ -1,9 +1,12 @@
 import { Button, Text, useDisclosure } from "@chakra-ui/react";
 import ButtonModal from "./Modal";
 import ModalForm from "./Form";
+import { useUser } from "@auth0/nextjs-auth0";
 
 export default function DayButton({ day, disabled }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { user } = useUser();
 
   return (
     <>
