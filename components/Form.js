@@ -12,17 +12,33 @@ import {
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 
-export default function ModalForm({ onClose }) {
+export default function ModalForm({ onClose, day }) {
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
 
-  const submitForm = async (data) => {
-    // Find a way to close the modal
+  const submitForm = async ({ taskToday, details }) => {
+    const completedData = {
+      taskToday,
+      details,
+      completed: taskToday && details ? true : false,
+    };
 
-    console.log(data);
+    const userDayData = {
+      [day]: completedData,
+    };
+
+    const userDay = await fetch("/api/addUserDay", {
+      method: "POST",
+      body: JSON.stringify(userDayData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    console.log(await userDay.json());
     onClose();
   };
 

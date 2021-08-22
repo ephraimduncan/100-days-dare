@@ -35,7 +35,7 @@ export default function DayButton({ day, disabled }) {
           onClose={onClose}
           day={day}
           title={`Day ${day}`}
-          body={<ModalForm onClose={onClose} />}
+          body={<ModalForm onClose={onClose} day={day} />}
         />
       )}
     </>

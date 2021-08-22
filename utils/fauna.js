@@ -21,12 +21,10 @@ const addUserUserGoal = async (userId, data) => {
     })
   );
 };
-const addUserDay = async (userId, data, previousDays) => {
-  const newUserDays = [...previousDays, data];
-
-  return faunaClient.query(
+const addUserDay = async (userId, data) => {
+  return await faunaClient.query(
     Update(Select(["ref"], Get(Match(Index("user_by_id"), userId))), {
-      data: { days: newUserDays },
+      data: { days: data },
     })
   );
 };
@@ -37,4 +35,4 @@ const getUserById = async (userId) => {
   );
 };
 
-export { getUserById, createUser, addUserUserGoal };
+export { getUserById, createUser, addUserUserGoal, addUserDay };

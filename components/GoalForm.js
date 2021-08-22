@@ -31,7 +31,6 @@ export default function GoalForm({ onClose }) {
     });
 
     Router.reload(window.location.pathname);
-    console.log(await userGoal.json());
   };
 
   return (
