@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import ButtonModal from "../components/Modal";
+import PopoverModal from "./PopoverModal";
 
 export default function UserPopover({ name, username, url }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -40,39 +41,20 @@ export default function UserPopover({ name, username, url }) {
           </PopoverHeader>
           <PopoverArrow />
           <PopoverCloseButton />
-          <chakra.div>
-            <PopoverContentComponent text="Set Goal and Daily Habit" />
-          </chakra.div>
-          <chakra.div>
-            <PopoverContentComponent text="Reset" />
-          </chakra.div>
-          <chakra.div onClick={onOpen}>
-            <PopoverContentComponent text="Logout" />
-            <ButtonModal
-              isOpen={isOpen}
-              onClose={onClose}
-              title="Logout"
-              body={
-                <Text textAlign="center" fontSize="xl">
-                  Are you sure you want to logout?
-                </Text>
-              }
-            />
-          </chakra.div>
+          <PopoverModal
+            title="Set Goal"
+            message="Set Your Goal Here"
+          />
+          <PopoverModal
+            title="Reset"
+            message="Are you sure you want to reset?"
+          />
+          <PopoverModal
+            title="Logout"
+            message="Are you sure you want to logout?"
+          />
         </PopoverContent>
       </Popover>
     </>
-  );
-}
-
-function PopoverContentComponent({ text }) {
-  return (
-    <PopoverBody
-      borderBottom="1px"
-      cursor="pointer"
-      borderColor="blue.100"
-    >
-      {text}
-    </PopoverBody>
   );
 }

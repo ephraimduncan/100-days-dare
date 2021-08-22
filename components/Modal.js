@@ -19,6 +19,31 @@ export default function ButtonModal({
   title,
   body,
 }) {
+  const renderSwitch = (title) => {
+    switch (title) {
+      case "Logout":
+        return (
+          <Link href="/api/auth/logout">
+            <chakra.a>
+              <PopoverButton title={title} />
+            </chakra.a>
+          </Link>
+        );
+
+      case "Reset":
+        return (
+          <Link href="/api/resetUser">
+            <chakra.a>
+              <PopoverButton title={title} />
+            </chakra.a>
+          </Link>
+        );
+
+      default:
+        <PopoverButton title={title} />;
+    }
+  };
+
   return (
     <>
       <Modal p={2} isOpen={isOpen} onClose={onClose}>
@@ -35,25 +60,20 @@ export default function ButtonModal({
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>{body}</ModalBody>
-          {title === "Logout" && (
-            <ModalFooter>
-              <Button>
-                <Link href="/api/auth/logout">
-                  <chakra.a>
-                    <Text
-                      fontFamily="bungee"
-                      fontWeight="light"
-                      color="#5a06ff"
-                    >
-                      Logout
-                    </Text>
-                  </chakra.a>
-                </Link>
-              </Button>
-            </ModalFooter>
-          )}
+
+          <ModalFooter>{renderSwitch(title)}</ModalFooter>
         </ModalContent>
       </Modal>
     </>
+  );
+}
+
+function PopoverButton({ title }) {
+  return (
+    <Button>
+      <Text fontFamily="bungee" fontWeight="light" color="#5a06ff">
+        {title}
+      </Text>
+    </Button>
   );
 }

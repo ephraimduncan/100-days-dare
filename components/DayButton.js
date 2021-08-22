@@ -5,7 +5,6 @@ import ModalForm from "./Form";
 export default function DayButton({ day, disabled }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // TODO: Fix Outline for Disabled Icons when clicked
   return (
     <>
       <Button
