@@ -35,13 +35,17 @@ export default withPageAuthRequired(function Dashboard() {
               <Flex direction="row">
                 <Text fontSize="xl">
                   Goal:{"     "}
-                  <chakra.span>Your Goal Here</chakra.span>
+                  <chakra.span>
+                    {data ? data.user.goal : "......."}
+                  </chakra.span>
                 </Text>
               </Flex>
               <Flex direction="row">
                 <Text fontSize="xl">
                   Daily Habit:{"  "}
-                  <chakra.span>Your new daily habit here</chakra.span>
+                  <chakra.span>
+                    {data ? data.user.dailyHabit : "......."}
+                  </chakra.span>
                 </Text>
               </Flex>
             </Flex>

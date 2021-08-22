@@ -5,12 +5,13 @@ import {
   Text,
 } from "@chakra-ui/react";
 import ButtonModal from "./Modal";
+import GoalForm from "./GoalForm";
 
 export default function PopoverModal({ title, message }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <chakra.div onClick={onOpen}>
+    <chakra.span onClick={onOpen}>
       <PopoverContentComponent text={title} />
       <ButtonModal
         isOpen={isOpen}
@@ -21,11 +22,11 @@ export default function PopoverModal({ title, message }) {
             textAlign={title !== "Set Goal" && "center"}
             fontSize="xl"
           >
-            {message}
+            {message ? message : <GoalForm onClose={onClose} />}
           </Text>
         }
       />
-    </chakra.div>
+    </chakra.span>
   );
 }
 

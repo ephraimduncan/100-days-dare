@@ -42,7 +42,7 @@ export default function UserPopover({ name, username, url }) {
           </PopoverHeader>
           <PopoverArrow />
           <PopoverCloseButton />
-          <PopoverModal title="Set Goal" message={<GoalForm />} />
+          <PopoverModal title="Set Goal" />
           <PopoverModal
             title="Reset"
             message="Are you sure you want to reset?"
