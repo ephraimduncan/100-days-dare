@@ -11,10 +11,11 @@ import {
   chakra,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
+import Router from "next/router";
 
 export default function ModalForm({ onClose, day }) {
-  const { data, error } = useSWR("/api/getUser");
+  const { data } = useSWR("/api/getUser");
 
   const userDaysActivity = data.user.days;
   const selectedDay = userDaysActivity.find((element) => {
@@ -39,15 +40,20 @@ export default function ModalForm({ onClose, day }) {
       [day]: completedData,
     };
 
-    const userDay = await fetch("/api/addUserDay", {
-      method: "POST",
-      body: JSON.stringify(userDayData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    mutate(
+      "/api/addUserDay",
+      await fetch("/api/addUserDay", {
+        method: "POST",
+        body: JSON.stringify(userDayData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+    );
 
     onClose();
+
+    Router.reload(window.location.pathname);
   };
 
   return (

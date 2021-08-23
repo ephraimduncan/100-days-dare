@@ -9,18 +9,6 @@ import Popover from "../components/Popover";
 export default withPageAuthRequired(function Dashboard() {
   const { data, error } = useSWR("/api/getUser");
 
-  // if (data) {
-  //   const { user } = data;
-
-  //   console.log(user);
-
-  //   // Day
-  //   if (user.currentDay === 1) {
-  //     console.log("Welcome");
-  //     user.currentDay++;
-  //   }
-  // }
-
   return (
     <Layout>
       <chakra.div mt={6} p={4}>
