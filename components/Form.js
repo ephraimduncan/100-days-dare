@@ -13,8 +13,9 @@ import {
 import { useForm } from "react-hook-form";
 import useSWR, { mutate } from "swr";
 import Router from "next/router";
+import Tweet from "./TweetButton";
 
-export default function ModalForm({ onClose, day }) {
+export default function ModalForm({ onClose, day, dayData }) {
   const { data } = useSWR("/api/getUser");
 
   const userDaysActivity = data.user.days;
@@ -74,6 +75,7 @@ export default function ModalForm({ onClose, day }) {
           <FormHelperText>Detailed description</FormHelperText>
         </FormControl>
         <Box textAlign="right">
+          <Tweet dayData={dayData} day={day} />
           <Button type="submit">
             <Text
               fontFamily="bungee"
