@@ -21,13 +21,7 @@ export default function ModalForm({ onClose, day }) {
     return parseInt(Object.keys(element)[0]) === parseInt(day);
   });
 
-  console.log(selectedDay);
-
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm({
+  const { handleSubmit, register } = useForm({
     defaultValues: {
       taskToday: selectedDay ? selectedDay[day].taskToday : "",
       details: selectedDay ? selectedDay[day].details : "",
@@ -45,8 +39,6 @@ export default function ModalForm({ onClose, day }) {
       [day]: completedData,
     };
 
-    onClose();
-
     const userDay = await fetch("/api/addUserDay", {
       method: "POST",
       body: JSON.stringify(userDayData),
@@ -54,6 +46,8 @@ export default function ModalForm({ onClose, day }) {
         "Content-Type": "application/json",
       },
     });
+
+    onClose();
   };
 
   return (

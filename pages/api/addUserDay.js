@@ -13,11 +13,31 @@ export default withApiAuthRequired(async function handler(req, res) {
   const previousUserData = await getUserById(user.sub);
   const previousArray = await previousUserData.data.days;
   const newArray = [...previousArray];
+
   newArray.push(req.body);
 
-  console.log(newArray);
+  function updateObjects(objects) {
+    return objects.map((object) => {
+      Object.keys(object).forEach((property) => {
+        object[property] = req.body[property] || object[property];
+      });
 
-  const userDays = await addUserDay(user.sub, newArray);
+      return object;
+    });
+  }
 
+  // I don't know how this filtering works.
+  // I spent about 10 hours here moving around things till it worked.
+  // Just left it as it is.
+  // Happiest day of my life.
+  // IT WORKS!!!!!
+
+  const newUniqueArray = [
+    ...new Map(
+      updateObjects(newArray).map((o) => [JSON.stringify(o), o])
+    ).values(),
+  ];
+
+  const userDays = await addUserDay(user.sub, newUniqueArray);
   return res.status(200).json(userDays);
 });
