@@ -13,7 +13,7 @@ const theme = extendTheme({
       200: "#F3E2ED",
       300: "#ece7f5",
     },
-    lime: "#ACFF06",
+    emerald: "#34D399",
     black: "#323232",
     pink: "#FF06AC",
     blu: "#5A06FF",
