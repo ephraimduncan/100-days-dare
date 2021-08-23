@@ -16,7 +16,6 @@ export default function Login() {
         userId: user.sub,
         goal: "",
         dailyHabit: "",
-        currentDay: 1,
         days: [],
       };
 
@@ -31,6 +30,9 @@ export default function Login() {
       router.push("/dashboard");
     }
   };
+
+  // Everyday when you login, calculate the day difference and add it
+  // Update day with it
 
   useEffect(() => {
     createUser(user);

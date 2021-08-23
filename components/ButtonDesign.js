@@ -17,7 +17,12 @@ export default function ButtonDesign() {
       }
     });
 
-    return userDay ? userDay : { completed: false };
+    return userDay
+      ? { ...userDay, ...{ createdAt: data.user.createdAt } }
+      : {
+          ...{ completed: false },
+          ...{ createdAt: data.user.createdAt },
+        };
   };
 
   return (

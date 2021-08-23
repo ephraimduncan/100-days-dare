@@ -2,9 +2,24 @@ import { Button, Text, useDisclosure } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import ButtonModal from "./Modal";
 import ModalForm from "./Form";
+import dayDifference from "../utils/dayDifference";
 
 export default function DayButton({ day, disabled, dayData }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  if (dayData) {
+    const createdAt = dayData.createdAt;
+    const todaysDate = new Date();
+
+    console.log(dayDifference(createdAt, todaysDate));
+  }
+
+  // dayData ?
+  //   dayDifference(dayData.createdAt, new Date() )++ !== day ?
+  //     <Text >{day} </Text> : ButtonModal
+
+  dayData &&
+    console.log(dayDifference(dayData.createdAt, new Date()));
 
   return (
     <>
@@ -39,6 +54,9 @@ export default function DayButton({ day, disabled, dayData }) {
             </Text>
           ))}
       </Button>
+
+      {/* TODO: Add comment else you will forget what I was doing.*/}
+
       {!disabled && (
         <ButtonModal
           isOpen={isOpen}
@@ -46,11 +64,19 @@ export default function DayButton({ day, disabled, dayData }) {
           day={day}
           title={`Day ${day}`}
           body={
-            <ModalForm
-              onClose={onClose}
-              day={day}
-              dayData={dayData}
-            />
+            dayData &&
+            dayDifference(dayData.createdAt, new Date()) + 1 !==
+              parseInt(day) ? (
+              <Text textAlign="center">
+                You cannot edit your progress for today.
+              </Text>
+            ) : (
+              <ModalForm
+                onClose={onClose}
+                day={day}
+                dayData={dayData}
+              />
+            )
           }
         />
       )}

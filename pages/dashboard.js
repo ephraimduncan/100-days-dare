@@ -24,7 +24,7 @@ export default withPageAuthRequired(function Dashboard() {
                 <Text fontSize="xl">
                   Goal:{"     "}
                   <chakra.span>
-                    {data ? data.user.goal : "......."}
+                    {data ? data.user.goal : ""}
                   </chakra.span>
                 </Text>
               </Flex>
@@ -32,7 +32,7 @@ export default withPageAuthRequired(function Dashboard() {
                 <Text fontSize="xl">
                   Daily Habit:{"  "}
                   <chakra.span>
-                    {data ? data.user.dailyHabit : "......."}
+                    {data ? data.user.dailyHabit : ""}
                   </chakra.span>
                 </Text>
               </Flex>

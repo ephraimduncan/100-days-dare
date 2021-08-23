@@ -1,6 +1,15 @@
 import faunadb from "faunadb";
-const { Create, Collection, Get, Match, Index, Update, Select } =
-  faunadb.query;
+const {
+  Create,
+  Collection,
+  Get,
+  Match,
+  Index,
+  Update,
+  Select,
+  ToString,
+  Now,
+} = faunadb.query;
 
 const faunaClient = new faunadb.Client({
   secret: process.env.FAUNA_SECRET,
@@ -9,7 +18,7 @@ const faunaClient = new faunadb.Client({
 const createUser = async (user) => {
   return await faunaClient.query(
     Create(Collection("users"), {
-      data: user,
+      data: { ...user, ...{ createdAt: ToString(Now()) } },
     })
   );
 };
