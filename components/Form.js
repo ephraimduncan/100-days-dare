@@ -14,6 +14,7 @@ import { useForm } from "react-hook-form";
 import useSWR, { mutate } from "swr";
 import Router from "next/router";
 import Tweet from "./TweetButton";
+import SpecialDayMessages from "./SpecialDayMessage";
 
 export default function ModalForm({ onClose, day, dayData }) {
   const { data } = useSWR("/api/getUser");
@@ -59,6 +60,7 @@ export default function ModalForm({ onClose, day, dayData }) {
 
   return (
     <>
+      <SpecialDayMessages day={day} />
       <chakra.form onSubmit={handleSubmit(submitForm)}>
         <FormControl m={2}>
           <FormLabel htmlFor="taskToday">
