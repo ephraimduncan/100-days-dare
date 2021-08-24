@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FormControl,
   FormLabel,
@@ -15,13 +15,10 @@ import Router from "next/router";
 import useSWR from "swr";
 
 export default function GoalForm({ onClose }) {
-  const { data, error } = useSWR("/api/getUser");
+  const { data } = useSWR("/api/getUser");
+  const [loading, setLoading] = useState(false);
 
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm({
+  const { handleSubmit, register } = useForm({
     defaultValues: {
       goal: data ? data.user.goal : "",
       dailyHabit: data ? data.user.dailyHabit : "",
@@ -29,15 +26,16 @@ export default function GoalForm({ onClose }) {
   });
 
   const onSubmit = async (data) => {
-    onClose();
-    const userGoal = await fetch("/api/addUserGoal", {
+    setLoading(true);
+    await fetch("/api/addUserGoal", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
       },
     });
-
+    setLoading(false);
+    onClose();
     Router.reload(window.location.pathname);
   };
 
@@ -62,7 +60,7 @@ export default function GoalForm({ onClose }) {
             fontWeight="light"
             color="#5a06ff"
           >
-            Save
+            {loading ? "Saving" : "Save"}
           </Text>
         </Button>
       </Box>

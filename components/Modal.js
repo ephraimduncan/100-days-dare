@@ -15,7 +15,6 @@ import Link from "next/link";
 export default function ButtonModal({
   isOpen,
   onClose,
-  day,
   title,
   body,
 }) {
@@ -23,7 +22,7 @@ export default function ButtonModal({
     switch (title) {
       case "Logout":
         return (
-          <Link href="/api/auth/logout">
+          <Link href="/api/auth/logout" passHref>
             <chakra.a>
               <PopoverButton title={title} />
             </chakra.a>
@@ -32,7 +31,7 @@ export default function ButtonModal({
 
       case "Reset":
         return (
-          <Link href="/api/resetUser">
+          <Link href="/api/resetUser" passHref>
             <chakra.a>
               <PopoverButton title={title} />
             </chakra.a>

@@ -31,7 +31,7 @@ export default function Hero() {
         alignItems="center"
         cursor="pointer"
       >
-        <Link href="/dashboard">
+        <Link href="/dashboard" passHref>
           <chakra.a
             m={[2, 3]}
             p={[4, 6]}
@@ -48,7 +48,7 @@ export default function Hero() {
             </Text>
           </chakra.a>
         </Link>
-        <Link href="/dashboard">
+        <Link href="/dashboard" passHref>
           <chakra.a
             m={[2, 3]}
             p={[4, 6]}
