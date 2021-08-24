@@ -1,4 +1,9 @@
-import { Button, Text, useDisclosure } from "@chakra-ui/react";
+import {
+  Button,
+  Text,
+  useDisclosure,
+  SkeletonCircle,
+} from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import ButtonModal from "./Modal";
 import ModalForm from "./Form";
@@ -6,6 +11,29 @@ import dayDifference from "../utils/dayDifference";
 
 export default function DayButton({ day, disabled, dayData }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const buttonContent = () => {
+    if (!disabled) {
+      if (dayData) {
+        if (dayData.completed) {
+          return <CheckIcon color="black" />;
+        } else {
+          return (
+            <Text
+              fontFamily="bungee"
+              fontWeight="light"
+              color="#5a06ff"
+              fontSize="xl"
+            >
+              {day}
+            </Text>
+          );
+        }
+      } else {
+        return <SkeletonCircle size="9" />;
+      }
+    }
+  };
 
   return (
     <>
@@ -26,19 +54,7 @@ export default function DayButton({ day, disabled, dayData }) {
         // Modal
         onClick={onOpen}
       >
-        {!disabled &&
-          (dayData && dayData.completed ? (
-            <CheckIcon color="black" />
-          ) : (
-            <Text
-              fontFamily="bungee"
-              fontWeight="light"
-              color="#5a06ff"
-              fontSize="xl"
-            >
-              {day}
-            </Text>
-          ))}
+        {buttonContent()}
       </Button>
 
       {/* TODO: Add comment else you will forget what I was doing.*/}
@@ -54,7 +70,7 @@ export default function DayButton({ day, disabled, dayData }) {
             dayDifference(dayData.createdAt, new Date()) + 1 !==
               parseInt(day) ? (
               <Text textAlign="center">
-                You cannot edit your progress for today.
+                You cannot edit your progress for day {day}
               </Text>
             ) : (
               <ModalForm

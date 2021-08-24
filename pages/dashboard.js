@@ -1,5 +1,12 @@
 import Image from "next/image";
-import { Flex, Text, chakra, Spacer, Avatar } from "@chakra-ui/react";
+import {
+  Flex,
+  Text,
+  chakra,
+  Spacer,
+  SkeletonCircle,
+  Skeleton,
+} from "@chakra-ui/react";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import useSWR from "swr";
 import ButtonDesign from "../components/ButtonDesign";
@@ -7,7 +14,7 @@ import Layout from "../components/Layout";
 import Popover from "../components/Popover";
 
 export default withPageAuthRequired(function Dashboard() {
-  const { data, error } = useSWR("/api/getUser");
+  const { data } = useSWR("/api/getUser");
 
   return (
     <Layout>
@@ -21,20 +28,24 @@ export default withPageAuthRequired(function Dashboard() {
               </Text>
 
               <Flex direction="row">
-                <Text fontSize="xl">
-                  Goal:{"     "}
-                  <chakra.span>
-                    {data ? data.user.goal : ""}
-                  </chakra.span>
-                </Text>
+                <Skeleton width="100%" m="1" isLoaded={data}>
+                  <Text fontSize="xl">
+                    Goal:{"  "}
+                    <chakra.span>
+                      {data && data.user.goal}
+                    </chakra.span>
+                  </Text>
+                </Skeleton>
               </Flex>
               <Flex direction="row">
-                <Text fontSize="xl">
-                  Daily Habit:{"  "}
-                  <chakra.span>
-                    {data ? data.user.dailyHabit : ""}
-                  </chakra.span>
-                </Text>
+                <Skeleton width="100%" m="1" isLoaded={data}>
+                  <Text fontSize="xl">
+                    Daily Habit:{"  "}
+                    <chakra.span>
+                      {data && data.user.dailyHabit}
+                    </chakra.span>
+                  </Text>
+                </Skeleton>
               </Flex>
             </Flex>
           </Flex>
@@ -64,7 +75,7 @@ export default withPageAuthRequired(function Dashboard() {
               url={data.user.avatar}
             />
           ) : (
-            <Avatar m={2} name="" avatar="" />
+            <SkeletonCircle size="61" />
           )}
           <Spacer />
         </Flex>
