@@ -1,5 +1,4 @@
-import Router from "next/router";
-import { ChakraProvider, Flex, Spacer } from "@chakra-ui/react";
+import { Flex, Spacer } from "@chakra-ui/react";
 import DayButton from "./DayButton";
 import useSWR from "swr";
 

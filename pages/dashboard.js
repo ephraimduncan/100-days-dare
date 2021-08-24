@@ -14,7 +14,7 @@ import Layout from "../components/Layout";
 import Popover from "../components/Popover";
 import { useEffect } from "react";
 
-export default function Dashboard() {
+export default withPageAuthRequired(function Dashboard() {
   const { user } = useUser();
   let userData;
 
@@ -121,12 +121,4 @@ export default function Dashboard() {
       </chakra.div>
     </Layout>
   );
-}
-
-export const getServerSideProps = withPageAuthRequired({
-  async getServerSideProps(context) {
-    return {
-      props: {},
-    };
-  },
 });

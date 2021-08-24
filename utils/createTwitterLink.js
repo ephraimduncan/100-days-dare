@@ -20,11 +20,3 @@ export default function createTwitterLink({ url, day, taskToday }) {
     })
   );
 }
-
-// console.log(
-//   createTwitterLink({
-//     url: "localhost:3000",
-//     day: 18,
-//     taskToday: "twitter",
-//   })
-// );
