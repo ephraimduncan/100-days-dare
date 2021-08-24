@@ -7,14 +7,49 @@ import {
   SkeletonCircle,
   Skeleton,
 } from "@chakra-ui/react";
-import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import useSWR from "swr";
 import ButtonDesign from "../components/ButtonDesign";
 import Layout from "../components/Layout";
 import Popover from "../components/Popover";
+import { useEffect } from "react";
 
-export default withPageAuthRequired(function Dashboard() {
-  const { data } = useSWR("/api/getUser");
+export default function Dashboard() {
+  const { user } = useUser();
+  let userData;
+
+  if (user) {
+    const { data } = useSWR("/api/getUser");
+    userData = data;
+  }
+
+  const data = userData;
+
+  const createUser = async (user) => {
+    if (user) {
+      const userData = {
+        name: user.name,
+        avatar: user.picture,
+        username: user.nickname,
+        userId: user.sub,
+        goal: "",
+        dailyHabit: "",
+        days: [],
+      };
+
+      await fetch("/api/createUser", {
+        method: "POST",
+        body: JSON.stringify(userData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    }
+  };
+
+  useEffect(() => {
+    createUser(user);
+  }, []);
 
   return (
     <Layout>
@@ -32,7 +67,7 @@ export default withPageAuthRequired(function Dashboard() {
                   <Text fontSize="xl">
                     Goal:{"  "}
                     <chakra.span>
-                      {data && data.user.goal}
+                      {data ? data.user.goal : ""}
                     </chakra.span>
                   </Text>
                 </Skeleton>
@@ -86,4 +121,12 @@ export default withPageAuthRequired(function Dashboard() {
       </chakra.div>
     </Layout>
   );
+}
+
+export const getServerSideProps = withPageAuthRequired({
+  async getServerSideProps(context) {
+    return {
+      props: {},
+    };
+  },
 });

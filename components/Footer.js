@@ -10,7 +10,7 @@ export default function Footer() {
           bgGradient="linear(to-l, #5A06FF,#0070f3)"
           bgClip="text"
         >
-          @dephraiim
+          <a href="https://twitter.com/dephraiim">@dephraiim</a>
         </chakra.span>
       </Text>
     </footer>
