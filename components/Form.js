@@ -54,7 +54,6 @@ export default function ModalForm({ onClose, day, dayData }) {
     );
 
     onClose();
-
     Router.reload(window.location.pathname);
   };
 
@@ -77,7 +76,9 @@ export default function ModalForm({ onClose, day, dayData }) {
           <FormHelperText>Detailed description</FormHelperText>
         </FormControl>
         <Box textAlign="right">
-          <Tweet dayData={dayData} day={day} />
+          {selectedDay && selectedDay[day].taskToday && (
+            <Tweet dayData={dayData} day={day} />
+          )}
           <Button type="submit">
             <Text
               fontFamily="bungee"
