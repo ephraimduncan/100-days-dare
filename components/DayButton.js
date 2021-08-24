@@ -7,20 +7,6 @@ import dayDifference from "../utils/dayDifference";
 export default function DayButton({ day, disabled, dayData }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  if (dayData) {
-    const createdAt = dayData.createdAt;
-    const todaysDate = new Date();
-
-    console.log(dayDifference(createdAt, todaysDate));
-  }
-
-  // dayData ?
-  //   dayDifference(dayData.createdAt, new Date() )++ !== day ?
-  //     <Text >{day} </Text> : ButtonModal
-
-  dayData &&
-    console.log(dayDifference(dayData.createdAt, new Date()));
-
   return (
     <>
       <Button

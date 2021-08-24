@@ -6,8 +6,6 @@ import styles from "../styles/Home.module.css";
 export default function Hero() {
   const [is500px] = useMediaQuery("(max-width: 500px)");
 
-  console.log(is500px);
-
   return (
     <div>
       <div className={styles.imageContainer}>

@@ -38,10 +38,24 @@ const addUserDay = async (userId, data) => {
   );
 };
 
+const resetUserDate = async (userId) => {
+  return await faunaClient.query(
+    Update(Select(["ref"], Get(Match(Index("user_by_id"), userId))), {
+      data: { createdAt: ToString(Now()) },
+    })
+  );
+};
+
 const getUserById = async (userId) => {
   return await faunaClient.query(
     Get(Match(Index("user_by_id"), userId))
   );
 };
 
-export { getUserById, createUser, addUserUserGoal, addUserDay };
+export {
+  getUserById,
+  createUser,
+  addUserUserGoal,
+  addUserDay,
+  resetUserDate,
+};

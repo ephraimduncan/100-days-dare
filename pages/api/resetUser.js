@@ -1,5 +1,5 @@
 import { getSession, withApiAuthRequired } from "@auth0/nextjs-auth0";
-import { addUserDay } from "../../utils/fauna";
+import { addUserDay, resetUserDate } from "../../utils/fauna";
 
 export default withApiAuthRequired(async function handler(req, res) {
   const { user } = getSession(req, res);
@@ -10,6 +10,7 @@ export default withApiAuthRequired(async function handler(req, res) {
       .json({ error: { message: "HTTP Method not allowed" } });
   }
 
-  const userDays = await addUserDay(user.sub, []);
+  await addUserDay(user.sub, []);
+  await resetUserDate(user.sub);
   return res.redirect("/dashboard");
 });
