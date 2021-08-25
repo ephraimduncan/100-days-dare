@@ -94,7 +94,7 @@ You are all set! Open [localhost:3000](http://localhost:3000/) to see the app.
 
 ## 💻 Built with
 
-- [Next.js](https://nextjs.org/)
+- [Next.js](https://nextjs.org/): App
 - [Auth0](https://auth0.com/): User Authentication
 - [FaunaDB](https://fauna.com/): Database
 - [Chakra UI](https://chakra-ui.com/): UI Design
