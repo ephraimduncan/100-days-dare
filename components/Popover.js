@@ -42,6 +42,10 @@ export default function UserPopover({ name, username, url }) {
             message="Are you sure you want to reset?"
           />
           <PopoverModal
+            title="Export As PDF"
+            message="Export your progress as PDF"
+          />
+          <PopoverModal
             title="Logout"
             message="Are you sure you want to logout?"
           />

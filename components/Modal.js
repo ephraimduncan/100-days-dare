@@ -11,6 +11,7 @@ import {
   chakra,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import PDFApp from "./PdfComponent";
 
 export default function ButtonModal({
   isOpen,
@@ -37,6 +38,9 @@ export default function ButtonModal({
             </chakra.a>
           </Link>
         );
+
+      case "Export As PDF":
+        return <PopoverButton title={title} pdf />;
     }
   };
 
@@ -63,12 +67,16 @@ export default function ButtonModal({
   );
 }
 
-function PopoverButton({ title }) {
+function PopoverButton({ title, pdf }) {
   return (
     <Button>
-      <Text fontFamily="bungee" fontWeight="light" color="#5a06ff">
-        {title}
-      </Text>
+      {pdf ? (
+        <PDFApp />
+      ) : (
+        <Text fontFamily="bungee" fontWeight="light" color="#5a06ff">
+          {title}
+        </Text>
+      )}
     </Button>
   );
 }
