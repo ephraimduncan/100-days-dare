@@ -12,14 +12,14 @@ export default function Hero() {
         {!is500px ? (
           <Image
             src="/cover3.svg"
-            alt="100 Days Challenge"
+            alt="100 Days Dare"
             layout="fill"
             className={styles.image}
           />
         ) : (
           <Image
             src="/cover2.svg"
-            alt="100 Days Challenge"
+            alt="100 Days Dare"
             layout="fill"
             className={styles.image}
           />

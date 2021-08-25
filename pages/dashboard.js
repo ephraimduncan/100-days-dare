@@ -59,7 +59,7 @@ export default withPageAuthRequired(function Dashboard() {
           <Flex direction="row">
             <Flex direction="column" mb="8">
               <Text fontSize="4xl" fontFamily="bungee">
-                100 Days Challenge
+                100 Days Dare
               </Text>
 
               <Flex direction="row">
