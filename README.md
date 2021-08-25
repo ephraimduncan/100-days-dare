@@ -7,9 +7,9 @@
 <p align="center">
     <a href="https://100daysdare.vercel.app/" target="blank">View Demo</a>
     ·
-    <a href="https://github.com/dephraiim.100-days-dare/issues/new">Report Bug</a>
+    <a href="https://github.com/dephraiim/100-days-dare/issues/new">Report Bug</a>
     ·
-    <a href="https://github.com/dephraiim.100-days-dare/issues/new">Request Feature</a>
+    <a href="https://github.com/dephraiim/100-days-dare/issues/new">Request Feature</a>
 </p>
 
 ### 100 Days Dare
@@ -30,11 +30,11 @@ Here are some of our best features.
 
 > Power up your new lifestyle and habit with the 100 Days of Challenge.
 
-- 👾 **Add progress on specific days**
+- 👾 **Add progress on each day**
 - 🍭 **Set a Daily and Final Goal**
-- 🌱 **Reset your progress and start again**
+- 🌱 **Reset your progress and start again** (If you want to)
 - 🥁 **Share your progress on Twitter**
-- 🔖 **WIP: Export your progress as PDF and Markdown**
+- 🔖 **Save your progress as PDF**
 - 👤 **Sign Up with Email, Google, Github or Twitter**
 
 ## 🛠️ Installation Steps
@@ -108,13 +108,13 @@ This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) fi
 
 ## 🦄 Deploy
 
-<a href="https://vercel.com/new/project?template=https://github.com/dephraiim.100-days-dare">
+<a href="https://vercel.com/new/project?template=https://github.com/dephraiim/100-days-dare.git">
 <img src="https://vercel.com/button" height="35px" />
 </a>
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/dephraiim.100-days-dare">
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/dephraiim/100-days-dare.git">
 <img src="https://www.netlify.com/img/deploy/button.svg" height="35px" />
 </a>
-<a href="https://cloud.digitalocean.com/apps/new?repo=https://github.com/dephraiim.100-days-dare">
+<a href="https://cloud.digitalocean.com/apps/new?repo=https://github.com/dephraiim/100-days-dare.git">
 <img src="https://camo.githubusercontent.com/df21703b4229f8d44f76c2d56073657a4ab450ca4566ba5d24d05bf528c298f8/68747470733a2f2f7777772e6465706c6f79746f646f2e636f6d2f646f2d62746e2d626c75652e737667" height="35px" />
 </a>
 
