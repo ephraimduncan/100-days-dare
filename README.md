@@ -1,8 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://100dayschallenge.vercel.app/">
+    <img alt="100 Days Challenge" src="public/cover1.svg" width="500" />
+  </a>
+</p>
 
-## Getting Started
+<p align="center">
+    <a href="https://100dayschallenge.vercel.app/" target="blank">View Demo</a>
+    ·
+    <a href="https://github.com/dephraiim.100-days-challenge/issues/new">Report Bug</a>
+    ·
+    <a href="https://github.com/dephraiim.100-days-challenge/issues/new">Request Feature</a>
+</p>
 
-First, run the development server:
+### 100 Days Challenge
+
+Consistency and habit formation can go a long way!. Become consistent in your daily learning and building. New app to document your journey in building and learning something new. Track your progress with 100 Days Challenge App. Tweet to us [@100DaysDare](https://twitter.com/100DaysDare/) with [#100DaysChallenge]()
+
+[Blog Post Here 📖]()
+
+## 🚀 Demo
+
+<a href="https://100dayschallenge.vercel.app/" target="blank">
+<img src="public" />
+</a>
+
+## 🧐 Features
+
+Here are some of our best features.
+
+> Power up your new lifestyle and habit with the 100 Days of Challenge.
+
+- 👾 **Add progress on specific days**
+- 🍭 **Set a Daily and Final Goal**
+- 🌱 **Reset your progress and start again**
+- 🥁 **Share your progress on Twitter**
+- 🔖 **WIP: Export your progress as PDF and Markdown**
+- 👤 **Sign Up with Email, Google, Github or Twitter**
+
+## 🛠️ Installation Steps
+
+1. [Sign up for a free account at FaunaDB](https://dashboard.fauna.com/accounts/register).
+
+2. Create a collection in Fauna called `users` and a token (more info on tokens)[https://docs.fauna.com/fauna/current/security/tokens.html].
+
+3. [Sign up for a free account at Auth0](https://auth0.com/signup?place=header&type=button&text=sign%20up).
+
+4. Create an application in Auth0 and make note of your domain, client Id, and client secret. Chekout the dos for [more details on setup + configuration](https://github.com/auth0/nextjs-auth0).
+
+5. Clone the repository
+
+```bash
+git clone https://github.com/dephraiim/100-days-challenge.git
+```
+
+6. Change the working directory
+
+```bash
+cd 100-days-challenge
+```
+
+7. Install dependencies
+
+```bash
+npm install
+# or
+yarn
+```
+
+8. Copy the `.env.local.example` file to `.env.local` and include your credentials.
+
+- **FAUNA_SECRET**: your fauna token
+- **AUTH0_SECRET**: A long secret value used to encrypt the session cookie. You can generate a suitable string using openssl rand -hex 32 on the command line
+- **AUTH0_BASE_URL**: The base URL of your application.
+- **AUTH0_ISSUER_BASE_URL**: The URL of your Auth0 tenant domain. If you are using a Custom Domain with Auth0, set this to the value of your Custom Domain instead of the value reflected in the "Settings" tab.
+- **AUTH0_CLIENT_ID**: Your Auth0 application's Client ID.
+- **AUTH0_CLIENT_SECRET**: Your Auth0 application's Client Secret.
+
+9. Run the development server:
 
 ```bash
 npm run dev
@@ -10,25 +84,52 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You are all set! Open [localhost:3000](http://localhost:3000/) to see the app.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 🍰 Contributing
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/dephraiim/100-days-challenge/compare).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
 
-## Learn More
+## 💻 Built with
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org/)
+- [Auth0](https://auth0.com/): User Authentication
+- [FaunaDB](https://fauna.com/): Database
+- [Chakra UI](https://chakra-ui.com/): UI Design
+- [react-hook-form](https://react-hook-form.com/): Form State Management
+- [swr](https://swr.vercel.app/): Data Fetching
+- [Vercel](http://vercel.com/): Hosting
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛡️ License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
 
-## Deploy on Vercel
+## 🦄 Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<a href="https://vercel.com/new/project?template=https://github.com/dephraiim.100-days-challenge">
+<img src="https://vercel.com/button" height="35px" />
+</a>
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/dephraiim.100-days-challenge">
+<img src="https://www.netlify.com/img/deploy/button.svg" height="35px" />
+</a>
+<a href="https://cloud.digitalocean.com/apps/new?repo=https://github.com/dephraiim.100-days-challenge">
+<img src="https://camo.githubusercontent.com/df21703b4229f8d44f76c2d56073657a4ab450ca4566ba5d24d05bf528c298f8/68747470733a2f2f7777772e6465706c6f79746f646f2e636f6d2f646f2d62746e2d626c75652e737667" height="35px" />
+</a>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 👨‍💻 Author
+
+### 👤 Ephraim Atta-Duncan
+
+- Twitter: [@dephraiim](https://twitter.com/dephraiim)
+- Github: [@dephraiim](https://github.com/dephraiim)
+- Hashnode: [@dephraiim](https://hashnode.com/@dephraiim)
+
+## 🙏 Support
+
+If you found the app helpful, consider supporting me with a coffee.
+
+<a href="https://www.buymeacoffee.com/dephraiim">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="35px">
+</a>
