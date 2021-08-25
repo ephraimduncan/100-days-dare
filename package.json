@@ -15,6 +15,7 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@fontsource/bungee": "^4.5.0",
+    "@react-pdf/renderer": "^2.0.19",
     "faunadb": "^4.3.0",
     "framer-motion": "^4",
     "next": "11.1.0",
