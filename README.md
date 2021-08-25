@@ -21,14 +21,14 @@ Dare yourself to learn or build anything in 100 Days. Stay consistent and keep d
 ## 🚀 Demo
 
 <a href="https://100daysdare.vercel.app/" target="blank">
-<img src="public" />
+<img src="./public/main.png" />
 </a>
 
 ## 🧐 Features
 
 Here are some of our best features.
 
-> Power up your new lifestyle and habit with the 100 Days of Challenge.
+> Power up your new lifestyle and habit with the 100 Days Dare.
 
 - 👾 **Add progress on each day**
 - 🍭 **Set a Daily and Final Goal**
