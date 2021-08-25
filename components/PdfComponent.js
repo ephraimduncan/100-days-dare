@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   imageClass: {
     width: "60%",
     alignSelf: "center",
-    margin: 5,
+    margin: 10,
   },
   section: {
     margin: 5,
@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
     width: COL1_WIDTH + "%",
     borderStyle: BORDER_STYLE,
     borderColor: BORDER_COLOR,
-    borderBottomColor: "#323232",
     borderWidth: BORDER_WIDTH,
     borderLeftWidth: 0,
     borderTopWidth: 0,
@@ -57,7 +56,6 @@ const styles = StyleSheet.create({
     width: COLN_WIDTH + "%",
     borderStyle: BORDER_STYLE,
     borderColor: BORDER_COLOR,
-    borderBottomColor: "#323232",
     borderWidth: BORDER_WIDTH,
     borderLeftWidth: 0,
     borderTopWidth: 0,
@@ -92,7 +90,7 @@ const styles = StyleSheet.create({
   info: {
     fontSize: 15,
     marginHorizontal: 20,
-    marginVertical: 3,
+    marginVertical: 4,
   },
 });
 
@@ -105,9 +103,10 @@ const MyDocument = ({ userData }) => {
           style={styles.imageClass}
           src="./social-media-cover.png"
         />
-        {/* Display Goal and Start Before the table */}
-        <Text style={styles.info}>Goal: </Text>
-        <Text style={styles.info}>Start Date: </Text>
+        <Text style={styles.info}>Goal: {userData.goal}</Text>
+        <Text style={styles.info}>
+          Start Date: {new Date(userData.createdAt).toLocaleString()}
+        </Text>
 
         {/* Table View */}
         <View style={styles.table}>
@@ -122,8 +121,8 @@ const MyDocument = ({ userData }) => {
               <Text style={styles.tableCellHeader}>Description</Text>
             </View>
           </View>
-          {userData &&
-            userData.map((userData) => {
+          {userData.days &&
+            userData.days.map((userData) => {
               const DAY = Object.keys(userData)[0];
               const TASK_TODAY = userData[DAY.toString()].taskToday;
               const DETAILS = userData[DAY.toString()].details;
@@ -166,7 +165,7 @@ export default function PDFApp() {
     <>
       {isClient && (
         <PDFDownloadLink
-          document={<MyDocument userData={data && data.user.days} />}
+          document={<MyDocument userData={data && data.user} />}
           fileName="100-Days-Dare.pdf"
         >
           {({ blob, url, loading, error }) =>
