@@ -100,7 +100,7 @@ You are all set! Open [localhost:3000](http://localhost:3000/) to see the app.
 - [Chakra UI](https://chakra-ui.com/): UI Design
 - [react-hook-form](https://react-hook-form.com/): Form State Management
 - [swr](https://swr.vercel.app/): Data Fetching
-- [react-pdf](https://react-pdf.com/): Data Fetching
+- [react-pdf](https://react-pdf.com/): Creating and Downloading PDF
 - [Vercel](http://vercel.com/): Hosting
 
 ## 🛡️ License
