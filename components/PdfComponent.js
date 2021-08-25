@@ -122,11 +122,11 @@ const MyDocument = ({ userData }) => {
             </View>
           </View>
           {userData.days &&
-            userData.days.map((userData) => {
-              const DAY = Object.keys(userData)[0];
-              const TASK_TODAY = userData[DAY.toString()].taskToday;
-              const DETAILS = userData[DAY.toString()].details;
-              const COMPLETED = userData[DAY.toString()].details;
+            userData.days.map((user) => {
+              const DAY = Object.keys(user)[0];
+              const TASK_TODAY = user[DAY.toString()].taskToday;
+              const DETAILS = user[DAY.toString()].details;
+              const COMPLETED = user[DAY.toString()].details;
 
               if (COMPLETED) {
                 return (
