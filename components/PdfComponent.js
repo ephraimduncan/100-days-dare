@@ -23,8 +23,9 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   imageClass: {
-    width: "50%",
+    width: "60%",
     alignSelf: "center",
+    margin: 5,
   },
   section: {
     margin: 5,
@@ -87,6 +88,12 @@ const styles = StyleSheet.create({
     margin: 5,
     fontSize: 11,
   },
+
+  info: {
+    fontSize: 15,
+    marginHorizontal: 20,
+    marginVertical: 3,
+  },
 });
 
 // Create Document Component
@@ -99,6 +106,9 @@ const MyDocument = ({ userData }) => {
           src="./social-media-cover.png"
         />
         {/* Display Goal and Start Before the table */}
+        <Text style={styles.info}>Goal: </Text>
+        <Text style={styles.info}>Start Date: </Text>
+
         {/* Table View */}
         <View style={styles.table}>
           <View style={styles.tableRow}>
@@ -117,20 +127,25 @@ const MyDocument = ({ userData }) => {
               const DAY = Object.keys(userData)[0];
               const TASK_TODAY = userData[DAY.toString()].taskToday;
               const DETAILS = userData[DAY.toString()].details;
+              const COMPLETED = userData[DAY.toString()].details;
 
-              return (
-                <View style={styles.tableRow}>
-                  <View style={styles.tableCol1}>
-                    <Text style={styles.tableCell}>{DAY}</Text>
+              if (COMPLETED) {
+                return (
+                  <View style={styles.tableRow}>
+                    <View style={styles.tableCol1}>
+                      <Text style={styles.tableCell}>{DAY}</Text>
+                    </View>
+                    <View style={styles.tableCol}>
+                      <Text style={styles.tableCell}>
+                        {TASK_TODAY}
+                      </Text>
+                    </View>
+                    <View style={styles.tableCol}>
+                      <Text style={styles.tableCell}>{DETAILS}</Text>
+                    </View>
                   </View>
-                  <View style={styles.tableCol}>
-                    <Text style={styles.tableCell}>{TASK_TODAY}</Text>
-                  </View>
-                  <View style={styles.tableCol}>
-                    <Text style={styles.tableCell}>{DETAILS}</Text>
-                  </View>
-                </View>
-              );
+                );
+              }
             })}
         </View>
       </Page>
