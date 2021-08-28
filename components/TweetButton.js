@@ -3,7 +3,7 @@ import createTwitterLink from "../utils/createTwitterLink";
 
 export default function Tweet({ dayData, day }) {
   const tweetUrl = createTwitterLink({
-    url: "localhost:3000",
+    url: "https://100daysdare.vercel.app",
     day: day,
     taskToday: dayData.taskToday,
   });
